@@ -18,14 +18,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val fragmentAdapter = MainAdapter(supportFragmentManager)
+        viewpager_main.adapter = fragmentAdapter
 
-          recyclerMain.layoutManager = LinearLayoutManager(this)
-          recycler2.layoutManager = LinearLayoutManager(this)
-          recycler2.adapter = SecondAdapter(this)
-        countryDetails = ArrayList<CountryDetails>()
-        recyclerMain.adapter = MainAdapter(countryDetails)
+        tabs_main.setupWithViewPager(viewpager_main)
+    }
 
-        fetchJson()
                 }
 
     fun fetchJson(){
@@ -46,15 +44,14 @@ class MainActivity : AppCompatActivity() {
                 val gson = GsonBuilder().create()
 
                 val countryDetails : List<CountryDetails> = gson.fromJson(body, Array<CountryDetails>::class.java).toList()
-                  runOnUiThread {  recyclerMain.adapter = MainAdapter(countryDetails)
-                }
+
 
             }
 
 
 
         })}
-    }
+
 
 
 

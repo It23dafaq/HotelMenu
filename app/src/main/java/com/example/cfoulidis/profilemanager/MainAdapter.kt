@@ -6,32 +6,44 @@ import android.view.View
 import android.view.ViewGroup
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.video_row.view.*
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentPagerAdapter
 
 
 /**
  * Created by cfoulidis on 4/22/2019.
  */
-class MainAdapter(val countryDetails: List<CountryDetails>): RecyclerView.Adapter<MainAdapter.CustomViewHolder>(){
-    //number of items
-    override fun getItemCount(): Int {
-
-        return countryDetails.size
+class MainAdapter(fragmentmanager: FragmentManager): FragmentPagerAdapter(fragmentmanager) {
+    override fun getCount(): Int {
+        return 3
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CustomViewHolder {
-        val layoutInflater = LayoutInflater.from(parent?.context)
-        val cellForRow = layoutInflater.inflate(R.layout.video_row, parent,false)
-      return CustomViewHolder(cellForRow)
+    override fun getItem(position: Int): Fragment {
+        return when (position) {
+            0 -> {
+                FirstFragment()
+            }
+            1 -> {
+                SecondFragment()
+            }
+            else -> {
+                return ThirdFragment()
+            }
+        }
     }
 
-    override fun onBindViewHolder(holder: CustomViewHolder?, position: Int) {
-        holder?.v?.viewTextView?.text = countryDetails[position].name;
-        println(countryDetails[0].flag)
-        Picasso.get().load("https://www.google.com/search?q=asta&rlz=1C1GCEU_enGR843GR843&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjPkd_5xubhAhU7wMQBHRDuBbwQ_AUIDigB&biw=1366&bih=608#imgdii=2KTkq-_-oG5ynM:&imgrc=mQK-ujTbYhBwcM:").into(holder?.v?.imageView?.imageView)
+
+
+    override fun getPageTitle(position: Int): CharSequence {
+        return when (position) {
+            0 -> "First Tab"
+            1 -> "Second Tab"
+            else -> {
+                return "Third Tab"
+            }
     }
 
+}
 
-    class CustomViewHolder(val v:View): RecyclerView.ViewHolder(v){
-
-    }
 }
