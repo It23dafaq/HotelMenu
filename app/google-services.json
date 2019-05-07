@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "281476607584",
+    "firebase_url": "https://profilemanager-f9645.firebaseio.com",
+    "project_id": "profilemanager-f9645",
+    "storage_bucket": "profilemanager-f9645.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281476607584:android:8a2220eed9e5eac6",
+        "android_client_info": {
+          "package_name": "com.example.cfoulidis.profilemanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281476607584-it591op6o4dc21hd63qs1a2s8hvi972p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cfoulidis.profilemanager",
+            "certificate_hash": "c1a50d60e065dbf7e4df8f54c3a9e86792ff7c90"
+          }
+        },
+        {
+          "client_id": "281476607584-d89vjssjglk06hg2arvoojome1bs22nb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFBpmdZkAEgE2b67RaCkKkHwgAQAWgzEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281476607584-d89vjssjglk06hg2arvoojome1bs22nb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
