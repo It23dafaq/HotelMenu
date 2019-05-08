@@ -16,16 +16,21 @@ import android.support.v4.app.FragmentPagerAdapter
  */
 class MainAdapter(fragmentmanager: FragmentManager): FragmentPagerAdapter(fragmentmanager) {
     override fun getCount(): Int {
-        return 3
+        return 4
     }
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> {
+
                 FirstFragment()
             }
             1 -> {
                 SecondFragment()
+
+            }
+            2 ->{
+                ForthFragment()
             }
             else -> {
                 return ThirdFragment()
@@ -39,6 +44,7 @@ class MainAdapter(fragmentmanager: FragmentManager): FragmentPagerAdapter(fragme
         return when (position) {
             0 -> "First Tab"
             1 -> "Second Tab"
+            2 -> "Forth Tab"
             else -> {
                 return "Third Tab"
             }

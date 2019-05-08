@@ -3,7 +3,9 @@ package com.example.cfoulidis.profilemanager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.widget.Button
+import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import com.google.gson.GsonBuilder
 import okhttp3.*
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         viewpager_main.adapter = fragmentAdapter
 
         tabs_main.setupWithViewPager(viewpager_main)
+
+
     }
 
                 }
